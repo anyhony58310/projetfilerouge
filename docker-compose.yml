@@ -1,0 +1,6 @@
+services: 
+  storybook:
+    image: arthureudeline/starbucks-tp-kit-storybook
+    ports: 
+      # Vous pouvez changer le 6006
+      - 6006:80
