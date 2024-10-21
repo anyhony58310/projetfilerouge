@@ -28,7 +28,12 @@ export default function Home() {
         {/* Récupérations des données de chaques categories */}
         {categories.map((category) => (
           <div key={category.id}>
-            <Link className="font-bold" href={`/${category.slug}`}>{category.name}({category.products.length})</Link>
+            <Link 
+              className="font-bold bg-gray-200 hover:bg-gray-500 p-2 rounded" 
+              href={`/${category.slug}`}
+            >
+              {category.name} ({category.products.length})
+          </Link>
 
             {/* Affichage de chaque produits pour chaque catégorie après avoir affiché sa catégorie et son ID */}
             <ProductGridLayout products={category.products}>

@@ -16,12 +16,10 @@ type NextPageProps<T = Record<string, string>> = {
   params: T
 }
 
-// Ce que j'attends comme paramètres
 type Props = {
 	slug: string
 }
 
-// app/blog/[category]/[post]/page.tsx
 export default async function Page({params} : NextPageProps<Props>) {
     const rechercherProduitCategorie = categories.find((reponse) => reponse.slug === params.slug);
     console.log(params.slug);
@@ -62,7 +60,7 @@ export default async function Page({params} : NextPageProps<Props>) {
                             url: '/'
                             },
                             {
-                                label: `${params.slug}`,
+                                label: `${rechercherProduitCategorie.name}`,
                                 url: "#"
                             }
                         ]}
